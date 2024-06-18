@@ -4,7 +4,7 @@ VHAKG is a multi-modal temporal knowledge graph (MMTKG) of multi-view videos of 
 This repository explains VHAKG and provides example files.
 
 The dataset is available on Zenodo.  
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.11438499.svg)](https://doi.org/10.5281/zenodo.11438499)
+**The URL is hidden for double-blined review.**
 
 ## Schema
 
