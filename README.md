@@ -18,3 +18,9 @@ The KG schema is defined as [OWL file](./vh2kg_schema_v2.0.0.ttl).
     - MMTKG with video frame image data directly embedded as literal values
 - [video_rdf](./sample/video_rdf/)/*.ttl
     - MMTKG with video data directly embedded as literal values
+
+## Tools
+
+A set of tools for searching and extracting videos from VHAKG is available.
+
+https://anonymous.4open.science/r/vhakg-tools-488D/
