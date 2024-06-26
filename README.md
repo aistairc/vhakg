@@ -5,6 +5,7 @@ This repository explains VHAKG and provides sample files.
 
 The dataset is available on Zenodo.  
 **The URL is hidden for double-blined review.**
+**[The sample data](#sample-data) is available instead of the full dataset.**
 
 ## Schema
 
