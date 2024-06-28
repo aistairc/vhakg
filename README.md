@@ -7,18 +7,18 @@ The dataset is available on Zenodo.
 **The URL is hidden for double-blined review.**
 **[The sample data](#sample-data) is available instead of the full dataset.**
 
-## Schema
-
-The KG schema is defined as [OWL file](./vh2kg_schema_v2.0.0.ttl).
-
-![KG](./kg.png)
-
 ## Sample data
 
 - [image_rdf](./sample/image_rdf/)/*.ttl
     - MMTKG with video frame image data directly embedded as literal values
 - [video_rdf](./sample/video_rdf/)/*.ttl
     - MMTKG with video data directly embedded as literal values
+
+## Schema
+
+The KG schema is defined as [OWL file](./vh2kg_schema_v2.0.0.ttl).
+
+![KG](./kg.png)
 
 ## Tools
 
