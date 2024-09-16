@@ -41,7 +41,7 @@ def load_ftaa(category, scene, activity):
     return ftaa
 
 def create_frame_list(ftaa):
-    # action scriptの行数とftaaを揃える
+    # Align action script lines and ftaa
     start_frame = 0
     end_frame = 0
     tmp_id = 0
@@ -172,7 +172,7 @@ def create_rdf(person_bbox_pickle_file_path):
         end_frame = ftaa_entity[1]
 
         if (int(frame) < int(start_frame) or int(frame) >=int(end_frame)) and event_counter < len(frame_list) - 1:
-            # 現在のフレームは次のイベントの範囲内
+            # The current frame is within the scope of the next event.
             event_counter += 1
             ftaa_entity = frame_list[event_counter]
             start_frame = ftaa_entity[0]
@@ -187,10 +187,10 @@ def create_rdf(person_bbox_pickle_file_path):
             # start time
             start_time_r = ex[camera.replace(" ", "_").lower() + "_" + scene + "_video_segment" + str(event_counter) + "_start_time"]
             g.add((start_time_r, RDF.type, mssn.MediaTimePointDescriptor))
-            # 回りくどいがデータ作成時の計算方法に合わせる
+
             g.add((start_time_r, RDF.value, Literal((float(frame) * float(fr_co))/original_frame_rate, datatype=XSD.float)))
             g.add((video_segment_r, mssn.hasMediaDescriptor, start_time_r))
-            # durationはeventにあるので個々では追加しない
+            # Duration is in EVENT and is not added individually.
             
             g.add((camera_recorded_r, mssn.hasMediaSegment, video_segment_r))
             event_r = ex["event" + str(event_counter) + "_" + activity.replace(" ", "_").lower() + "_" + scene]
@@ -217,8 +217,6 @@ def create_rdf(person_bbox_pickle_file_path):
                 continue
             if (object_name + str(object_id)) in prev_object_bbox_dict:
                 prev_object_bbox_r = prev_object_bbox_dict[object_name + str(object_id)]
-                # 下のstrを外すと重複アリになる
-                # prev_object_bbox_str = g.value(prev_object_bbox_r, vh2kg["bbox-2d-value"], None)
                 prev_object_bbox_str = str(g.value(prev_object_bbox_r, vh2kg["bbox-2d-value"], None))
                 # print("current_object_bbox_str, " + object_name +  ": " + object_bbox_str)
                 # print("prev_object_bbox_str, " + object_name + ": " + prev_object_bbox_str)
